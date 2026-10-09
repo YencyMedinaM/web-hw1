@@ -1,0 +1,385 @@
+:root {
+  --bg: #faf8f5;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --muted: #4b5563;
+  --accent: #b45309;
+  --border: #e7e0d6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+/* Layout helpers */
+
+.container {
+  width: 100%;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.narrow {
+  max-width: 44rem;
+}
+
+.section {
+  padding: 3.5rem 0;
+}
+
+.section-alt {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.75rem;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover,
+a:focus {
+  color: var(--text);
+}
+
+a:focus,
+.button:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.section-intro {
+  color: var(--muted);
+  margin-bottom: 1.75rem;
+}
+
+/* Header and navigation */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+
+.brand {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-list a {
+  display: block;
+  min-height: 44px;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  color: var(--text);
+  border-bottom-color: var(--border);
+}
+
+.nav-list a[aria-current="true"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Profile */
+
+.profile {
+  padding-top: 3rem;
+}
+
+.profile-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.profile-photo {
+  display: block;
+  width: 14rem;
+  height: 17.5rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  border: 4px solid var(--surface);
+  box-shadow: 0 6px 20px rgba(31, 41, 55, 0.18);
+}
+
+.eyebrow {
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.tagline {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Buttons */
+
+.button {
+  display: inline-block;
+  min-height: 44px;
+  padding: 0.65rem 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 0.5rem;
+}
+
+.button:hover,
+.button:focus {
+  color: var(--accent);
+  background-color: var(--surface);
+}
+
+/* Coursework cards */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.card {
+  padding: 1.5rem;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.card-meta {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.card-placeholder {
+  background-color: var(--surface);
+  border-style: dashed;
+}
+
+.card-placeholder h3,
+.card-placeholder p {
+  color: var(--muted);
+}
+
+/* Hobbies and interests */
+
+.interest-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.interest-list li {
+  padding: 0.85rem 1.25rem;
+  font-weight: 600;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 0.5rem;
+}
+
+/* Contact */
+
+.contact-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-list li {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-list li:last-child {
+  border-bottom: none;
+}
+
+.contact-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact-list a {
+  overflow-wrap: anywhere;
+}
+
+/* Footer */
+
+.site-footer {
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* Tablet */
+
+@media (min-width: 600px) {
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .interest-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-list li {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1.5rem;
+  }
+
+  .contact-label {
+    min-width: 6rem;
+  }
+}
+
+/* Desktop */
+
+@media (min-width: 900px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 5rem 0;
+  }
+
+  .profile-inner {
+    flex-direction: row;
+    gap: 4rem;
+    text-align: left;
+  }
+
+  .profile-photo {
+    flex-shrink: 0;
+    width: 18rem;
+    height: 22.5rem;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .interest-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

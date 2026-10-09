@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personal homepage - Yency Medina Morel">
+  <title>Yency Medina Morel | Personal Homepage</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <p class="brand">Yency Medina Morel</p>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#coursework">Coursework</a></li>
+          <li><a href="#interests">Hobbies & Interests</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="profile" class="section profile" aria-labelledby="profile-title">
+      <div class="container profile-inner">
+        <img class="profile-photo" src="images/profile.jpg" width="640" height="800"
+             alt="Portrait of Yency Medina Morel, a young man with braided hair, looking downward and wearing a black t-shirt in warm indoor lighting">
+        <div class="profile-text">
+          <p class="eyebrow">Welcome to my homepage</p>
+          <h1 id="profile-title">Yency Medina Morel</h1>
+          <p class="tagline">IT student &middot; Future engineer &middot; Cybersecurity enthusiast</p>
+          <p>Hi, my name is Yency Medina Morel! I'm an undergraduate student at Georgia State University who loves technology, building computers and servers, and learning how different systems work. This page is a little home for my coursework, my interests, and ways to get in touch.</p>
+          <a class="button" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container narrow">
+        <h2 id="about-title">About Me</h2>
+        <p>I am an undergraduate student in the second semester of my sophomore year at Georgia State University, studying for a bachelor's degree in Information Technology. 
+          After my first degree I plan to come back and pursue a master's degree in aerospace engineering. 
+          My main goal is to work in engineering and/or cybersecurity so that I can help improve the safety of information and users on the internet and in other cyber-related fields.
+          I currently work as a Technician for a company called XTech Solutions, where I head the installation fo camera systems for various client types such as residential or commercial.
+        </p>
+      </div>
+    </section>
+
+    <section id="coursework" class="section section-alt" aria-labelledby="coursework-title">
+      <div class="container">
+        <h2 id="coursework-title">Coursework & Assignments</h2>
+        <p class="section-intro">A space for my course projects and assignments. More will be added as the semester goes on.</p>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Homework 1: Personal Homepage</h3>
+            <p>This website, built with semantic HTML5 and an external, responsive CSS stylesheet.</p>
+            <p class="card-meta">Technologies: HTML5, CSS3</p>
+          </article>
+          <article class="card card-placeholder">
+            <h3>Coming soon</h3>
+            <p>Project and assignment details will appear here.</p>
+          </article>
+          <article class="card card-placeholder">
+            <h3>Coming soon</h3>
+            <p>Project and assignment details will appear here.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests" class="section" aria-labelledby="interests-title">
+      <div class="container">
+        <h2 id="interests-title">Hobbies & Interests</h2>
+        <p class="section-intro">When I'm not studying, you can usually find me doing one of these.</p>
+        <ul class="interest-list">
+          <li>Playing Guitar</li>
+          <li>Playing Drums</li>
+          <li>Playing Video Games</li>
+          <li>Programming</li>
+          <li>Engineering</li>
+          <li>Star Wars</li>
+          <li>Spiderman</li>
+          <li>Watching Hero Movies</li>
+          <li>Watching Sci-Fi Movies</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-alt" aria-labelledby="contact-title">
+      <div class="container narrow">
+        <h2 id="contact-title">Contact</h2>
+        <p class="section-intro">Feel free to reach out. I'd love to connect.</p>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Email</span>
+            <a href="mailto:yencymedina1@gmail.com">yencymedina1@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/yency-medina-01118629a/" target="_blank" rel="noopener noreferrer">linkedin.com/in/yency-medina-01118629a</a>
+          </li>
+          <li>
+            <span class="contact-label">GitHub</span>
+            <a href="https://github.com/YencyMedina" target="_blank" rel="noopener noreferrer">github.com/YencyMedina</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Yency Medina Morel</p>
+    </div>
+  </footer>
+
+  <script>
+    // Highlights the navigation link for the section currently in view.
+    (function () {
+      var links = document.querySelectorAll(".nav-list a");
+      var sections = [];
+
+      links.forEach(function (link) {
+        var target = document.querySelector(link.getAttribute("href"));
+        if (target) {
+          sections.push({ link: link, target: target });
+        }
+      });
+
+      function setCurrent() {
+        var marker = window.scrollY + 120;
+        var current = sections[0];
+
+        sections.forEach(function (item) {
+          if (item.target.offsetTop <= marker) {
+            current = item;
+          }
+        });
+
+        // At the very bottom of the page, highlight the last section.
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
+          current = sections[sections.length - 1];
+        }
+
+        sections.forEach(function (item) {
+          if (item === current) {
+            item.link.setAttribute("aria-current", "true");
+          } else {
+            item.link.removeAttribute("aria-current");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", setCurrent, { passive: true });
+      window.addEventListener("resize", setCurrent);
+      setCurrent();
+    })();
+  </script>
+
+</body>
+</html>
